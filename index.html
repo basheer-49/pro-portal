@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRO PORTAL | متخصصون في الحلول الرقمية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #D00000;
+            --white: #FFFFFF;
+            --light-gray: #F5F5F5;
+            --dark-gray: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        header {
+            position: relative;
+            height: 80vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .header-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .header-content h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .header-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Products Section */
+        .section-title {
+            text-align: center;
+            margin: 3rem 0;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 0 1rem;
+        }
+
+        .product-card {
+            background: var(--light-gray);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 250px;
+            object-fit: contain;
+            background-color: var(--white);
+            padding: 20px;
+        }
+
+        .product-content {
+            padding: 1.5rem;
+        }
+
+        .product-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .product-desc {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .product-features {
+            margin-bottom: 1.5rem;
+        }
+
+        .product-features li {
+            margin-bottom: 0.5rem;
+            list-style-type: none;
+            position: relative;
+            padding-right: 1.5rem;
+        }
+
+        .product-features li:before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            right: 0;
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.8rem 1.8rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: #A00000;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background: var(--light-gray);
+            padding: 3rem 0;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .benefits-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .benefits-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .benefits-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .benefit-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 150px;
+        }
+
+        .benefit-icon i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            margin-bottom: 3rem;
+        }
+
+        .review-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 0 1rem;
+        }
+
+        .review-card {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-stars {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .review-author {
+            font-weight: 700;
+        }
+
+        /* Footer Section */
+        footer {
+            background: var(--dark-gray);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #555;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 3rem;
+            }
+
+            .header-content p {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                height: 70vh;
+                min-height: 400px;
+            }
+
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .header-content p {
+                font-size: 1rem;
+            }
+
+            .product-img {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <h1>PRO PORTAL</h1>
+            <p>متخصصون في بيع منتجات الحلول الرقمية وتوفير الكهرباء</p>
+        </div>
+    </header>
+
+    <!-- Products Section -->
+    <section class="container">
+        <h2 class="section-title">منتجاتنا</h2>
+        <div class="products">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://raw.githubusercontent.com/imagesloads/images/refs/heads/main/img_ddd9293306dd9111.jpg" alt="Pro Portal 88" class="product-img">
+                <div class="product-content">
+                    <h3 class="product-title">Pro Portal 88</h3>
+                    <p class="product-desc">مستشعر حركة تيار متردد متقدم مع قدرات التعلم</p>
+                    <ul class="product-features">
+                        <li>Remote learning of AC commands</li>
+                        <li>Automatic AC activation based on room occupancy</li>
+                        <li>Customizable time delays</li>
+                        <li>Smart night mode</li>
+                        <li>Optional "Hello" activation command</li>
+                        <li>PIR motion sensing</li>
+                        <li>Versatile installation (screw or stick, battery-powered)</li>
+                        <li>Expandable with optional door/window sensors</li>
+                    </ul>
+                    <div class="product-price">49 USD</div>
+                    <a href="https://wa.me/962798863666?text=أريد%20طلب%20المنتج%20Pro%20Portal%2088%20(المنتج%201)" class="btn">اطلب الآن</a>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://raw.githubusercontent.com/imagesloads/images/refs/heads/main/img_5681b7eef8731620.jpg" alt="Ecosense 2000" class="product-img">
+                <div class="product-content">
+                    <h3 class="product-title">Ecosense 2000</h3>
+                    <p class="product-desc">مستشعر حركة تيار متردد بسيط وفعال</p>
+                    <ul class="product-features">
+                        <li>PIR human presence detection</li>
+                        <li>Automatic AC shutdown when no motion is detected</li>
+                        <li>Wide compatibility with remote-controlled AC units</li>
+                        <li>Battery-powered for easy installation</li>
+                        <li>Night comfort sensor for flexible nighttime use</li>
+                        <li>Adjustable delay timers (15, 30, 45 minutes)</li>
+                    </ul>
+                    <div class="product-price">140 USD</div>
+                    <a href="https://wa.me/962798863666?text=أريد%20طلب%20المنتج%20Ecosense%202000%20(المنتج%202)" class="btn">اطلب الآن</a>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://raw.githubusercontent.com/imagesloads/images/refs/heads/main/img_47590693ce64e843.jpg" alt="Pro Portal 83" class="product-img">
+                <div class="product-content">
+                    <h3 class="product-title">Pro Portal 83</h3>
+                    <p class="product-desc">زر إضاءة مستشعر للحركة</p>
+                    <ul class="product-features">
+                        <li>3-in-1 occupancy, vacancy, manual ON/OFF mode</li>
+                        <li>Adjustable time delay (15 seconds to 30 minutes)</li>
+                        <li>Ambient light sensing to save energy</li>
+                        <li>Adjustable sensitivity (low/high)</li>
+                        <li>Settings adjustment without removing the panel</li>
+                        <li>Magnetic latch relay for better performance</li>
+                        <li>Fire-resistant materials for safety</li>
+                        <li>RoHS, CE, FCC, UL certified</li>
+                    </ul>
+                    <div class="product-price">24 USD</div>
+                    <a href="https://wa.me/962798863666?text=أريد%20طلب%20المنتج%20Pro%20Portal%2083%20(المنتج%203)" class="btn">اطلب الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">فوائد منتجاتنا</h2>
+            <div class="benefits-content">
+                <p>تساعد منتجاتنا في توفير ما يصل إلى 80% من فاتورة الكهرباء من خلال التحكم الذكي في أجهزة التكييف والإضاءة بناءً على وجود الأشخاص في الغرفة.</p>
+                <div class="benefits-icons">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bolt"></i>
+                        <span>توفير الطاقة</span>
+                    </div>
+                    <div class="benefit-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span>توفير المال</span>
+                    </div>
+                    <div class="benefit-icon">
+                        <i class="fas fa-leaf"></i>
+                        <span>صديق للبيئة</span>
+                    </div>
+                    <div class="benefit-icon">
+                        <i class="fas fa-brain"></i>
+                        <span>ذكي وتلقائي</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="container reviews">
+        <h2 class="section-title">آراء العملاء</h2>
+        <div class="review-cards">
+            <div class="review-card">
+                <div class="review-stars">?????</div>
+                <p class="review-text">لقد وفرت لي أجهزة Pro Portal أكثر من 70% من فاتورة الكهرباء. المنتجات سهلة التركيب وتعمل بكفاءة عالية.</p>
+                <p class="review-author">- أحمد محمد</p>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">?????</div>
+                <p class="review-text">حل رائع للفنادق والشركات. زبائننا سعداء بدرجة الحرارة المناسبة عند دخول الغرف دون الحاجة لضبط المكيف يدوياً.</p>
+                <p class="review-author">- سارة الفندقية</p>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">?????</div>
+                <p class="review-text">خدمة عملاء ممتازة ومنتجات عالية الجودة. أنصح الجميع بتجربة هذه الحلول الذكية لتوفير الطاقة.</p>
+                <p class="review-author">- خالد التاجر</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="contact-info">
+                <h3>تواصل معنا</h3>
+                <p>هاتف: 0798863666</p>
+            </div>
+            <div class="social-links">
+                <a href="https://wa.me/962798863666" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/pro_portal_eco/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/share/19ihB949fH/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/company/108282377/admin/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="copyright">
+                <p>جميع الحقوق محفوظة لجهاد ناصر</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // WhatsApp button functionality
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                if(this.getAttribute('href').includes('wa.me')) {
+                    // Track the conversion if needed
+                    console.log('Product ordered: ' + this.parentElement.querySelector('.product-title').textContent);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
